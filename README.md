@@ -1,21 +1,6 @@
 # Victor Hugo Lima Monteiro
 
-Engenharia da Computação (IFRJ) — 2º período. Experiência em modelagem 3D e desenvolvimento de aplicações interativas: Unity/C# para XR e React/Node.js para web. Atuação em projetos acadêmicos e de extensão com foco em entrega, organização e colaboração.
-
-## Áreas de atuação
-- **3D & XR:** modelagem de ambientes no Blender, integração em Unity (C#) para experiências imersivas.
-- **Web:** front-end em React/React Native e back-end em Node.js/NestJS.
-- **Produtos educacionais e conteúdos técnicos:** wikis, sites e apps com foco em clareza e escalabilidade.
-
-## Experiência selecionada
-- **Modelador 3D e Desenvolvedor Unity — UnityLab / Noveon Tech (2024–2025)**  
-  Modelagem de ambientes (Blender) e interações em Unity (C#) para XR; acompanhamento de bolsistas.
-- **Bolsista Jovem Talento — FAPERJ (jul/2023–dez/2024)**  
-  Criação de wiki #MostraTech (WordPress, PHP, JavaScript) e implantação em servidor com PL/SQL.
-- **IC Júnior — CNPq (OIAgro) (mai/2024–ago/2024)**  
-  Equipe TilApp (TOP 15 ideias); site **Economia Azul no RJ** (Wix/PHP) e app de **Educação Financeira** (ReactJS/NodeJS).
-- **Monitor voluntário — IFRJ (fev/2023–dez/2023)**  
-  Projeto “Educação Popular no IFRJ”; apoio a atividades acadêmicas.
+Graduando em Engenharia da Computação pelo IFRJ, com formação técnica integrada em Informática. Experiência em desenvolvimento de aplicações web e mobile, criação de soluções interativas e gestão de projetos acadêmicos financiados por órgãos de fomento (FAPERJ e CNPq). Conhecimentos sólidos em linguagens de programação, bancos de dados, computação em nuvem (AWS), redes de computadores e modelagem 3D como diferencial.
 
 ## Stack e ferramentas
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -33,20 +18,6 @@ Engenharia da Computação (IFRJ) — 2º período. Experiência em modelagem 3D
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Unreal](https://img.shields.io/badge/-Unreal-0E1128?style=flat-square&logo=unrealengine&logoColor=white)
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
-
-## Formação
-- **Engenharia da Computação (em curso)** — Instituto Federal de Educação, Ciência e Tecnologia do Rio de Janeiro (IFRJ)  
-  Início: 2025 — 2º período
-- **Técnico em Informática (concluído em 2024)** — IFRJ
-
-## Cursos e certificações
-- AWS Academy — Fundamentos de Nuvem (20h) · Cisco — Fundamentos de Rede (70h)  
-- IFRS — Lógica de Programação, JavaScript, HTML (20h cada)  
-- IFRS — React (40h) · React Native (40h) · SCRUM (40h) · Bibliotecas Gráficas p/ Jogos (20h)  
-- CG Boost Academy — Blender (Iniciantes) e Sculpting (cada 5h)
-
-## Idiomas
-- **Inglês:** B1 (MET, 2024) · Curso completo FISK (2024)
 
 ## Contato
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vhlima1008)
