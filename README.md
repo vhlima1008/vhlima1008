@@ -20,7 +20,13 @@
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
 
 ## Sobre mim
-> Graduando em Engenharia da Computação pelo IFRJ, com formação técnica integrada em Informática. Experiência em desenvolvimento de aplicações web e mobile, criação de soluções interativas e gestão de projetos acadêmicos financiados por órgãos de fomento (FAPERJ e CNPq). Conhecimentos sólidos em linguagens de programação, bancos de dados, computação em nuvem (AWS), redes de computadores e modelagem 3D como diferencial.
+> Graduando em Engenharia da Computação pelo IFRJ, com formação técnica integrada em Informática.
+>
+>Atuou na criação de uma “Wiki” para a plataforma #MostraTech como bolsista Jovem Talento da FAPERJ, de 2023 a 2024. Participou da edição 2024 da Olimpíada de Inovação do Agronegócio (OiAgro), obtendo a certificação de “Solução Destaque” pelo projeto “TilApp: Um App Inovador e Inclusivo” e uma bolsa de Iniciação Científica Júnior pela CNPq. De forma autônoma, trabalhou na empresa Noveon Tech como Modelador 3D e Desenvolvedor Unity em 2025. Atualmente, é desenvolvedor multiplataforma autônomo.
+>
+>Realizou trabalho voluntário como Monitor do projeto de pesquisa “Educação Popular no IFRJ: um estudo sobre territorialização e permanência estudantil” em 2023. Foi, também, Monitor da Sala Temática de Química nas edições VI, VII e VIII da Semana de Educação, Tecnologia e Ciência do IFRJ campus Niterói.
+>
+>Possui conhecimentos sólidos em linguagens de programação pelo IFRJ e IFRS, bancos de dados e computação em nuvem com certificação AWS, redes de computadores com certificação Cisco e modelagem 3D com cursos pela CG Boost Academy.
 
 ## Contato
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vhlima1008)
