@@ -19,13 +19,13 @@
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
 
 ## About me
->Graduating in Computer Engineering, with a technical background in informatics. I have expertise in TypeScript (React & TailwindCSS) and Python (Streamlit/Automation), focusing on customized and innovative solutions.
+>Currently pursuing a degree in Computer Engineering with a technical background in Informatics, I work in the development of digital solutions focusing on TypeScript (React & TailwindCSS) and Python (Streamlit/Automation). I have a special interest in customized applications and innovative products.
 >
->From an early age, I have been involved in the software field, working on research and development (R&D) projects during my technical studies, such as creating a "Wiki" with WordPress + Elementor for the #MostraTech platform while a FAPERJ Young Talent scholarship recipient from 2023 to 2024. I participated in the 2024 edition of the Agribusiness Innovation Olympics (OiAgro), where I obtained a "Featured Solution" certification and a Junior Scientific Initiation scholarship from CNPq, in which I worked on the development of an application using React Native + Node.js.
+>My involvement with technology began early, during my technical education, when I participated in Research & Development (R&D) projects. During this period, I was a Young Talent scholarship recipient from FAPERJ (2023–2024) and developed an institutional “Wiki” for the #MostraTech platform using WordPress (Elementor), in addition to deploying it on an external server using PL/SQL. In 2024, I participated in the Agribusiness Innovation Olympics (OiAgro), where I received the “Outstanding Solution” certification and a Junior Scientific Initiation scholarship from CNPq, working on the development of an application with React Native and Node.js.
 >
->I worked independently at Noveon Tech as a Unity (C#) Developer in 2025 and currently I am a front-end developer (React-TSX & TailwindCSS) for the company Ventrium Aceleradora de Crescimento.
+>Professionally, I worked as a Unity (C#) Developer at Noveon Tech in 2025 and currently provide front-end development services to companies such as Ventrium Growth Accelerator, building modern interfaces with React-TSX and TailwindCSS.
 >
->In addition, I have independent projects in the area of ​​algorithmic 3D modeling using proceduralism and heuristics through block programming and Python, with Blender software.
+>In parallel, I develop independent algorithmic 3D modeling projects, exploring proceduralism, heuristics, block programming, and Python in Blender.
 
 ## Contacts
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vhlima1008)
