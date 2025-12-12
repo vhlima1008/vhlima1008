@@ -1,5 +1,5 @@
 # <a href='https://vhlima1008.github.io/portfolio/'>Victor Hugo Lima Monteiro</a>
-> <strong>Computer Engineer</strong> | TypeScript & Python<br>
+> <strong>Junior Front-end Developer</strong> | TypeScript & Python<br>
 
 ## Stack e Tools
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
