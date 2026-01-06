@@ -20,8 +20,11 @@
 
 ## About me
 >Currently pursuing a degree in Computer Engineering with a technical background in Informatics by Instituto Federal do Rio de Janeiro, I work in the development of digital solutions focusing on TypeScript (React & TailwindCSS) and Python (Streamlit/Django). I have a special interest in customized applications and innovative products.
+
 >My involvement with technology began early, during my technical education, when I participated in Research & Development (R&D) projects. During this period, I was a Young Talent scholarship recipient from FAPERJ (2023–2024) and developed an institutional “Wiki” for the #MostraTech platform using WordPress (Elementor), in addition to deploying it on an external server using PL/SQL. In 2024, I participated in the Agribusiness Innovation Olympics (OiAgro), where I received the “Outstanding Solution” certification and a Junior Scientific Initiation scholarship from CNPq, working on the development of an application with React Native and Node.js.
+
 >Professionally, provide front-end development services to companies such as Ventrium Growth Accelerator, building modern interfaces with React-TSX and TailwindCSS. 
+
 >Among my skills, I highlight TypeScript, React, JavaScript, TailwindCSS, Python (Streamlit & Django), Node.js, REST APIs, SQL, Git/GitHub, WordPress, as well as knowledge of UI/UX and accessibility (WCAG).
 
 ## Contacts
