@@ -60,8 +60,3 @@
 
   Among my skills, I highlight TypeScript, React, JavaScript, TailwindCSS, Python (Streamlit &amp; Django), Node.js, REST APIs, SQL, Git/GitHub, WordPress, as well as knowledge of UI/UX and accessibility (WCAG).
 </details>
-
-## Contacts
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vhlima1008)
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/vhlima1008)
-[![Email](https://img.shields.io/badge/-Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vhlima1008@gmail.com)
