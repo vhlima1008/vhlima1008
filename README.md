@@ -1,5 +1,5 @@
 # <a href='https://www.linkedin.com/in/vhlima1008/?locale=en_US'>Victor Hugo Lima Monteiro</a>
-> <strong>Junior Front-end Developer</strong> | TypeScript & Python<br>
+> <strong>Junior Full-stack Developer</strong> | TypeScript & Python<br>
 
 ## Stack & Tools
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
