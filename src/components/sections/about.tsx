@@ -3,6 +3,7 @@ import { GithubMark } from "@/components/icons/github-mark"
 import { ButtonLink } from "@/components/motion/button/base"
 import { MagneticButton } from "@/components/motion/button/magnetic"
 import { Magnetic } from "@/components/motion/magnetic"
+import { TextReveal } from "../motion/text-reveal"
 
 const SKILLS = [
   "Java",
@@ -38,23 +39,15 @@ export function About() {
               Victor Hugo
             </h2>
             <p className="mt-1 text-sm font-medium text-muted-foreground">
-              Estagiário de Desenvolvimento · Leste Telecom
+              Desenvolvedor Full-stack | Java Spring Boot & TypeScript React
             </p>
           </div>
         </div>
 
         <div className="mt-6 space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
-          <p>
-            Desenvolvo produtos de ponta a ponta: back-ends robustos em Java
-            com Spring Boot, APIs em Python e interfaces em React com
-            TypeScript. Gosto de projetos onde performance e experiência do
-            usuário andam juntas.
-          </p>
-          <p>
-            Fora do trabalho, mantenho o hábito de estudar todos os dias — de
-            algoritmos a novas stacks — e publico o que construo em código
-            aberto.
-          </p>
+          <TextReveal 
+            text={"Apaixonado por criar produtos inovadores de ponta a ponta, minha especialidade é entregar soluções robustas e performáticas."}          
+          />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">
