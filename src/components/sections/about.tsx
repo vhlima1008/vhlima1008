@@ -81,6 +81,20 @@ export function About() {
           <TextReveal 
             text={"Apaixonado por criar produtos inovadores de ponta a ponta, minha especialidade é entregar soluções robustas e performáticas."}          
           />
+          
+          {
+            <TextReveal
+              delay={2}
+              stagger={0.012}
+              text={[
+                `Atualmente cursando Engenharia da Computação, com formação técnica em Informática pelo Instituto Federal do Rio de Janeiro, atuo no desenvolvimento de soluções digitais com foco em TypeScript (React & TailwindCSS) e Python (Streamlit/Django). Tenho especial interesse em aplicações personalizadas e produtos inovadores.`,
+                " ",
+                `Meu envolvimento com tecnologia começou cedo, durante minha formação técnica, quando participei de projetos de Pesquisa e Desenvolvimento (P&D). Nesse período, fui bolsista Jovem Talento pela FAPERJ (2023–2024) e desenvolvi uma “Wiki” institucional para a plataforma #MostraTech utilizando WordPress (Elementor), além de realizar o deploy em um servidor externo usando PL/SQL. Em 2024, participei da Olimpíada de Inovação do Agronegócio (OiAgro), onde recebi a certificação “Solução em Destaque” e uma bolsa de Iniciação Científica Júnior pelo CNPq, atuando no desenvolvimento de uma aplicação com React Native e Node.js.`,
+                " ",
+                `Profissionalmente, presto serviços de desenvolvimento front-end para empresas como a Ventrium Growth Accelerator, construindo interfaces modernas com React-TSX e TailwindCSS.`,
+              ]}
+            />
+          }
         </div>
 
         <div className="relative mt-8">

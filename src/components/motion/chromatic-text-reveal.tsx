@@ -184,7 +184,7 @@ export function ChromaticTextReveal({
                 : { duration: 0.36, ease: EASE_OUT },
             }}
             onAnimationComplete={scheduleNextWord}
-            className="absolute start-0 top-0 whitespace-nowrap bg-clip-text text-transparent [background-image:var(--chromatic-gradient)] [contain:paint]"
+            className="absolute inset-0 flex items-center justify-center whitespace-nowrap bg-clip-text text-transparent [background-image:var(--chromatic-gradient)] [contain:paint]"
             style={{
               "--chromatic-sweep": reduceMotion
                 ? REVEAL_FINISH

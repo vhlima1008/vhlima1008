@@ -16,7 +16,7 @@ export function Footer() {
       id="contato"
       className="dark relative overflow-hidden bg-background px-6 pb-32 pt-24 sm:px-8 md:pt-32 lg:px-12"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-start gap-6 border-b border-border pb-16">
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
             Contato

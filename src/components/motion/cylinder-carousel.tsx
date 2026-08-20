@@ -423,8 +423,11 @@ export function CylinderCarousel({
           hoverRef.current = false;
         }}
         className={cn(
-          // clip-path, not overflow: it also clips the GPU-composited balls
-          "relative w-full touch-none outline-none [clip-path:inset(0)]",
+          // clip-path clips the GPU-composited balls that overflow-hidden
+          // alone can miss; overflow-hidden is still needed alongside it so
+          // off-stage balls don't expand the page's horizontal scroll area
+          // (clip-path only affects paint, not scrollable overflow).
+          "relative w-full touch-none overflow-hidden outline-none [clip-path:inset(0)]",
           // The stage drives the roll from the press itself, so iOS must not
           // claim the same touch for its callout or a slide drag.
           TOUCH_GESTURE_CLASS,

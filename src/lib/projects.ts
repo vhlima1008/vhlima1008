@@ -17,15 +17,6 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "escreveaqui",
-    name: "Escreve Aqui",
-    description:
-      "Editor de texto online, anônimo e open source, feito no Brasil.",
-    topics: [],
-    repoUrl: "https://github.com/vhlima1008/escreveaqui",
-    liveUrl: "https://escreveaqui.com.br",
-  },
-  {
     slug: "data-formatters",
     name: "Data Formatters",
     description:
@@ -51,6 +42,14 @@ export const PROJECTS: Project[] = [
     language: "JavaScript",
     topics: ["java", "spring-boot", "react", "typescript"],
     repoUrl: "https://github.com/vhlima1008/form-builder",
+    caseStudy: {
+      problem:
+        "Replicar o Google Forms como estudo de caso exigia sustentar formulários com múltiplas seções e perguntas de tipos variados, além de separar claramente a área autenticada de quem cria formulários da área pública de quem apenas responde.",
+      approach:
+        "Modelei o domínio em um schema MySQL com sete entidades (usuários, formulários, seções, perguntas, opções e respostas) usando UUID como chave primária, e separei rotas privadas de criação/edição das rotas públicas de resposta por slug no back-end em Spring Boot, consumido por um front-end em React e TypeScript.",
+      result:
+        "MVP funcional orquestrado via Docker Compose, com back-end e front-end rodando de forma independente e um modelo de dados documentado (MER) cobrindo toda a estrutura de formulários, seções, perguntas e respostas.",
+    },
   },
   {
     slug: "job-manager-api",
@@ -78,6 +77,14 @@ export const PROJECTS: Project[] = [
     topics: [],
     repoUrl: "https://github.com/vhlima1008/bank-system",
     liveUrl: "https://vhlima1008-bank-system.streamlit.app",
+    caseStudy: {
+      problem:
+        "Protótipo educacional para praticar arquitetura em camadas — a lógica de domínio bancário (login, saldo, depósitos, saques, financiamento) precisava ficar isolada da camada de apresentação, em vez de misturada com o código da interface.",
+      approach:
+        "Isolei a lógica de negócio em Python puro e agnóstico de framework, dentro de um pacote core (User, Transaction, Extract, Financing), e usei o Streamlit apenas para consumir esse domínio via páginas multipage, incluindo simulação de financiamento pelo sistema PRICE com cálculo de CET.",
+      result:
+        "Aplicação publicada no Streamlit Community Cloud, com fluxo completo de login mock, operações de saldo, depósito e saque, e extrato renderizado a partir da própria saída do domínio.",
+    },
   },
   {
     slug: "tic-tac-toe",

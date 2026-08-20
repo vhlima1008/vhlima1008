@@ -55,12 +55,30 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
 
       <div className="relative z-10 flex w-full max-w-4xl flex-col items-center gap-8 px-6 text-center">
+        <div className="flex flex-col items-center gap-3">
+          <img
+            src="https://avatars.githubusercontent.com/u/116356507?v=4"
+            alt="Foto de perfil de Victor Hugo"
+            width={56}
+            height={56}
+            loading="lazy"
+            className="size-14 rounded-full border border-foreground/20 object-cover"
+          />
+          <span className="text-sm font-medium text-foreground/80">
+            Victor Hugo
+          </span>
+        </div>
+
         <div className="flex w-full justify-center [container-type:inline-size]">
           <ChromaticTextReveal
-            prefix="Seu negócio é"
-            words={["experiência.", "performance.", "exclusivo."]}
+            prefix="Eu construo"
+            words={[
+              "produtos digitais.",
+              "interfaces performáticas.",
+              "experiências sob medida.",
+            ]}
             startOnView={false}
-            className="shrink-0 font-bold tracking-[-0.04em] text-foreground [font-size:clamp(1.25rem,7.8cqw,3rem)]"
+            className="shrink-0 flex-col items-center gap-1 font-bold tracking-[-0.04em] text-foreground [font-size:clamp(1rem,6cqw,3rem)]"
           />
         </div>
 

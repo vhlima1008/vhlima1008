@@ -50,7 +50,7 @@ export function Experience() {
           acadêmica e de pesquisa.
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-[28px] border border-border">
+        <div className="mt-10 overflow-hidden rounded-[28px]">
           <BouncyAccordion
             items={items}
             defaultValue={EXPERIENCE[0]?.id ?? null}

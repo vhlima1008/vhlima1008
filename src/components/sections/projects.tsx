@@ -6,7 +6,6 @@ import {
   CenterMorphModalContent,
   CenterMorphModalTrigger,
 } from "@/components/motion/center-morph-modal"
-import { InfiniteMasonry } from "@/components/motion/infinite-masonry"
 import { PROJECTS, type Project, type ProjectCaseStudy } from "@/lib/projects"
 
 function ProjectLinks({ project }: { project: Project }) {
@@ -163,7 +162,7 @@ function ProjectCard({ project }: { project: Project }) {
 export function Projects() {
   return (
     <section id="projetos" className="relative px-6 py-24 sm:px-8 md:py-32 lg:px-12">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
@@ -191,39 +190,28 @@ export function Projects() {
           </MagneticButton>
         </div>
 
-        <div className="mt-10">
-          <InfiniteMasonry
-            items={PROJECTS}
-            getItemKey={(project) => project.slug}
-            renderItem={(project) => <ProjectCard project={project} />}
-            onLoadMore={() => {}}
-            hasMore={false}
-            estimateSize={(project) =>
-              200 +
-              Math.min(project.description.length, 160) * 0.6 +
-              (project.caseStudy ? 40 : 0) +
-              (project.liveUrl ? 26 : 0)
-            }
-            minColumnWidth={260}
-            maxColumns={3}
-            gap={20}
-            ariaLabel="Lista de projetos"
-            className="border-none bg-transparent p-0"
-            endState={
-              <span>
-                Isso é tudo por aqui — mais em{" "}
-                <a
-                  href="https://github.com/vhlima1008"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline underline-offset-2 hover:text-foreground"
-                >
-                  github.com/vhlima1008
-                </a>
-              </span>
-            }
-          />
+        <div
+          aria-label="Lista de projetos"
+          className="mt-10 columns-1 gap-5 sm:columns-2"
+        >
+          {PROJECTS.map((project) => (
+            <div key={project.slug} className="mb-5 break-inside-avoid">
+              <ProjectCard project={project} />
+            </div>
+          ))}
         </div>
+
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Isso é tudo por aqui — mais em{" "}
+          <a
+            href="https://github.com/vhlima1008"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline underline-offset-2 hover:text-foreground"
+          >
+            github.com/vhlima1008
+          </a>
+        </p>
       </div>
     </section>
   )
