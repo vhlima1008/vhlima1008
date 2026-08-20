@@ -1,22 +1,55 @@
 import { Download } from "lucide-react"
+import type { IconType } from "react-icons"
+import {
+  SiDocker,
+  SiFigma,
+  SiMysql,
+  SiNodedotjs,
+  SiOpenjdk,
+  SiPython,
+  SiReact,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si"
 import { GithubMark } from "@/components/icons/github-mark"
 import { ButtonLink } from "@/components/motion/button/base"
 import { MagneticButton } from "@/components/motion/button/magnetic"
 import { Magnetic } from "@/components/motion/magnetic"
+import { CylinderCarousel } from "../motion/cylinder-carousel"
 import { TextReveal } from "../motion/text-reveal"
 
-const SKILLS = [
-  "Java",
-  "Spring Boot",
-  "Node.js",
-  "Python",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "MySQL",
-  "Docker",
-  "Figma",
+const SKILLS: { name: string; icon: IconType; color: string }[] = [
+  { name: "Java", icon: SiOpenjdk, color: "#437291" },
+  { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
 ]
+
+function SkillBall({
+  name,
+  icon: Icon,
+  color,
+}: {
+  name: string
+  icon: IconType
+  color: string
+}) {
+  return (
+    <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card p-3">
+      <Icon className="size-8" style={{ color }} />
+      <span className="text-[11px] font-medium text-muted-foreground">
+        {name}
+      </span>
+    </div>
+  )
+}
 
 export function About() {
   return (
@@ -50,15 +83,22 @@ export function About() {
           />
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {SKILLS.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground"
+        <div className="relative mt-8">
+          <div className="p-2">
+            <CylinderCarousel
+              itemSize={96}
+              visibleItems={5}
+              minScale={0.65}
+              autoRotate
+              autoRotateSpeed={0.3}
             >
-              {skill}
-            </span>
-          ))}
+              {SKILLS.map((skill) => (
+                <SkillBall key={skill.name} {...skill} />
+              ))}
+            </CylinderCarousel>
+          </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-linear-to-r from-background to-transparent sm:w-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-linear-to-l from-background to-transparent sm:w-20" />
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
