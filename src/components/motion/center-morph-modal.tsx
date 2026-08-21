@@ -23,6 +23,7 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
+import { useSmoothScroll } from "@/components/motion/smooth-scroll";
 import { EASE_OUT } from "@/lib/ease";
 import { cn } from "@/lib/utils";
 
@@ -209,6 +210,7 @@ export function CenterMorphModalContent({
 }: CenterMorphModalContentProps) {
   const context = useCenterMorphModalContext("CenterMorphModalContent");
   const reduce = useReducedMotion() ?? false;
+  const { lenis } = useSmoothScroll();
   const [mounted, setMounted] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -218,8 +220,19 @@ export function CenterMorphModalContent({
   useEffect(() => {
     if (!context.open) return;
 
-    const previousOverflow = document.body.style.overflow;
+    // The page's actual scrolling box is <html>, not <body> — locking only
+    // body's overflow leaves html free to keep scrolling under the modal, so
+    // both must be clamped here.
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    // Lenis's stop() (without its autoToggle option) only pauses its own RAF
+    // loop — it doesn't touch overflow — so on its own it doesn't stop native
+    // wheel scroll from taking over once Lenis lets go of the event. The
+    // overflow lock above is what actually blocks scrolling; this just keeps
+    // Lenis's scroll-linked state from drifting out of sync while frozen.
+    lenis?.stop();
 
     const focusFrame = requestAnimationFrame(() => {
       const [firstFocusable] = getFocusableElements(overlayRef.current);
@@ -256,10 +269,12 @@ export function CenterMorphModalContent({
     return () => {
       cancelAnimationFrame(focusFrame);
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      lenis?.start();
       document.getElementById(context.triggerId)?.focus();
     };
-  }, [context, dismissible]);
+  }, [context, dismissible, lenis]);
 
   if (!mounted) return null;
 
