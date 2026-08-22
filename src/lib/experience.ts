@@ -1,4 +1,10 @@
-export type ExperienceKind = "work" | "education" | "research" | "volunteer"
+export type ExperienceKind =
+  | "education"
+  | "work"
+  | "research"
+  | "award"
+  | "course"
+  | "volunteer"
 
 export type ExperienceEntry = {
   id: string
@@ -12,6 +18,17 @@ export type ExperienceEntry = {
 }
 
 export const EXPERIENCE: ExperienceEntry[] = [
+  {
+    id: "ifrj-bacharelado",
+    kind: "education",
+    short: "IFRJ",
+    organization: "Instituto Federal do Rio de Janeiro (IFRJ)",
+    role: "Bacharelado em Engenharia da Computação",
+    period: "Abril 2025 – Atual",
+    bullets: [
+      "Formação em andamento com foco em engenharia de software, algoritmos e sistemas.",
+    ],
+  },
   {
     id: "leste-telecom",
     kind: "work",
@@ -41,14 +58,15 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    id: "ifrj-bacharelado",
-    kind: "education",
-    short: "IFRJ",
-    organization: "Instituto Federal do Rio de Janeiro (IFRJ)",
-    role: "Bacharelado em Engenharia da Computação",
-    period: "Abril 2025 – Atual",
+    id: "faperj",
+    kind: "research",
+    short: "FAPERJ",
+    organization: "FAPERJ",
+    role: "Bolsista Jovem Talento",
+    period: "Julho 2023 – Dezembro 2024",
     bullets: [
-      "Formação em andamento com foco em engenharia de software, algoritmos e sistemas.",
+      "Desenvolveu o MVP da plataforma #MostraTech (WordPress + Elementor), centralizando as bolsas de pesquisa do IFRJ campus Niterói — cerca de 10 projetos submetidos.",
+      "Estruturou a base de conhecimento da plataforma via Echo Knowledge Base, com apoio de JavaScript para as ações do usuário.",
     ],
   },
   {
@@ -65,15 +83,36 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    id: "faperj",
-    kind: "research",
-    short: "FAPERJ",
-    organization: "FAPERJ",
-    role: "Bolsista Jovem Talento",
-    period: "Julho 2023 – Dezembro 2024",
+    id: "oiagro",
+    kind: "award",
+    short: "OiAgro",
+    organization: "Olimpíada de Inovação do Agronegócio (OiAgro)",
+    role: "Solução em Destaque — TilApp",
+    period: "Abril 2024",
     bullets: [
-      "Desenvolveu o MVP da plataforma #MostraTech (WordPress + Elementor), centralizando as bolsas de pesquisa do IFRJ campus Niterói — cerca de 10 projetos submetidos.",
-      "Estruturou a base de conhecimento da plataforma via Echo Knowledge Base, com apoio de JavaScript para as ações do usuário.",
+      "Reconhecimento Top 15 de Solução em Destaque pela solução TilApp.",
+    ],
+  },
+  {
+    id: "aws-academy",
+    kind: "course",
+    short: "AWS Academy",
+    organization: "AWS Academy Cloud Foundations",
+    role: "AWS Academy Graduate",
+    period: "Janeiro 2025",
+    bullets: [
+      "Certificação de 20 horas em fundamentos de computação em nuvem AWS.",
+    ],
+  },
+  {
+    id: "cisco-netacad",
+    kind: "course",
+    short: "Cisco NetAcad",
+    organization: "Cisco NetAcad",
+    role: "Cisco Networking Essentials",
+    period: "Janeiro 2024",
+    bullets: [
+      "Certificação de 70 horas em fundamentos de redes de computadores.",
     ],
   },
   {

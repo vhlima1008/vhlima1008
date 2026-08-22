@@ -1,4 +1,11 @@
-import { Briefcase, FlaskConical, GraduationCap, HeartHandshake } from "lucide-react"
+import {
+  BookOpen,
+  Briefcase,
+  FlaskConical,
+  GraduationCap,
+  HeartHandshake,
+  Trophy,
+} from "lucide-react"
 import type { ReactNode } from "react"
 import {
   BouncyAccordion,
@@ -7,9 +14,11 @@ import {
 import { EXPERIENCE, type ExperienceKind } from "@/lib/experience"
 
 const KIND_ICON: Record<ExperienceKind, ReactNode> = {
-  work: <Briefcase className="size-4" aria-hidden="true" />,
   education: <GraduationCap className="size-4" aria-hidden="true" />,
+  work: <Briefcase className="size-4" aria-hidden="true" />,
   research: <FlaskConical className="size-4" aria-hidden="true" />,
+  award: <Trophy className="size-4" aria-hidden="true" />,
+  course: <BookOpen className="size-4" aria-hidden="true" />,
   volunteer: <HeartHandshake className="size-4" aria-hidden="true" />,
 }
 

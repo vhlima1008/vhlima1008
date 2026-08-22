@@ -99,11 +99,13 @@ function LenisBridge({
   progress,
   velocity,
   lenisRef,
+  onLenisChange,
 }: {
   scrollY: MotionValue<number>;
   progress: MotionValue<number>;
   velocity: MotionValue<number>;
   lenisRef: { current: Lenis | null };
+  onLenisChange: (lenis: Lenis | null) => void;
 }) {
   const lenis = useLenis((instance) => {
     scrollY.set(instance.scroll);
@@ -112,10 +114,16 @@ function LenisBridge({
   });
   useEffect(() => {
     lenisRef.current = lenis ?? null;
+    // lenisRef alone doesn't trigger a re-render, so api.lenis (read from
+    // state, not the ref) would otherwise stay null forever after this
+    // mounts — callers relying on it (e.g. to stop/start Lenis) never get a
+    // live instance.
+    onLenisChange(lenis ?? null);
     return () => {
       lenisRef.current = null;
+      onLenisChange(null);
     };
-  }, [lenis, lenisRef]);
+  }, [lenis, lenisRef, onLenisChange]);
   return null;
 }
 
@@ -185,6 +193,7 @@ export function SmoothScroll({
   const progress = useMotionValue(0);
   const velocity = useMotionValue(0);
   const lenisRef = useRef<Lenis | null>(null);
+  const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const nativeSource = useCallback(
@@ -217,8 +226,8 @@ export function SmoothScroll({
   useNativeScrollSync(nativeFallback, nativeSource, scrollY, progress, velocity);
 
   const api = useMemo<SmoothScrollApi>(
-    () => ({ lenis: lenisRef.current, scrollY, progress, velocity, scrollTo }),
-    [scrollY, progress, velocity, scrollTo],
+    () => ({ lenis: lenisInstance, scrollY, progress, velocity, scrollTo }),
+    [lenisInstance, scrollY, progress, velocity, scrollTo],
   );
 
   if (nativeFallback) {
@@ -251,6 +260,7 @@ export function SmoothScroll({
           progress={progress}
           velocity={velocity}
           lenisRef={lenisRef}
+          onLenisChange={setLenisInstance}
         />
         {children}
       </ReactLenis>
