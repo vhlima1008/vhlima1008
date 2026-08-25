@@ -5,6 +5,8 @@ import { Experience } from "@/components/sections/experience"
 import { Footer } from "@/components/sections/footer"
 import { Hero } from "@/components/sections/hero"
 import { Projects } from "@/components/sections/projects"
+import { inject } from '@vercel/analytics';
+inject();
 
 export function App() {
   return (
