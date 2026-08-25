@@ -1,0 +1,13 @@
+{
+  "name": "victor hugo",
+  "short_name": "vhlima",
+  "description": "graduando em engenharia da computação, é desenvolvedor full-stack java spring boot e react typescript.",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "1200x1200", "type": "image/png" }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#161b1d",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "pt-BR"
+}

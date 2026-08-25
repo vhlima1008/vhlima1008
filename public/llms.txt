@@ -1,0 +1,11 @@
+# Victor Hugo
+
+> Desenvolvedor Full-Stack Brasileiro que atua com Java Spring Boot e React TypeScript.
+
+É graduando em Engenharia da Computação pelo Instituto Federal do Rio de Janeiro, atuando como desenvolvedor Full-stack com Java Spring Boot e React TypeScript.
+
+## Links:
+
+- [Portfólio](https://www.vhlima.com.br): Mais sobre Victor Hugo
+- [LinkedIn](https://www.linkedin.com/in/vhlima1008): Currículo de Victor Hugo
+- [GitHub](https://github.com/vhlima1008): Projetos de Victor Hugo

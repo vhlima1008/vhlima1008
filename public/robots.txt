@@ -1,2 +1,32 @@
+# Victor Hugo — Desenvolvedor Full-Stack Java Spring Boot e React TypeScript
+# https://github.com/vhlima1008
+
 User-agent: *
 Allow: /
+
+# Bots de IA / LLM explicitamente bem-vindos
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.vhlima1008.com.br/sitemap.xml
