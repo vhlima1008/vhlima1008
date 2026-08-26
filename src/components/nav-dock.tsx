@@ -1,10 +1,18 @@
-import { FolderGit2, Home, Mail, Route, UserRound } from "lucide-react"
+import {
+  BookOpenText,
+  FolderGit2,
+  Home,
+  Mail,
+  Route,
+  UserRound,
+} from "lucide-react"
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import {
   ExpandableTabs,
   type ExpandableTabsItem,
 } from "@/components/motion/expandable-tabs"
 import { useSmoothScroll } from "@/components/motion/smooth-scroll"
+import { navigateTo } from "@/lib/navigation"
 
 type NavSection = {
   id: string
@@ -13,7 +21,7 @@ type NavSection = {
   preview: string
 }
 
-const NAV_SECTIONS: NavSection[] = [
+const MAIN_NAV_SECTIONS: NavSection[] = [
   {
     id: "hero",
     label: "Início",
@@ -46,9 +54,35 @@ const NAV_SECTIONS: NavSection[] = [
   },
 ]
 
+const BLOG_NAV_SECTIONS: NavSection[] = [
+  {
+    id: "blog",
+    label: "Blog",
+    icon: <BookOpenText className="size-4" aria-hidden="true" />,
+    preview: "Abrir textos técnicos em uma página dedicada.",
+  },
+]
+
+function createItems(sections: NavSection[]): ExpandableTabsItem[] {
+  return sections.map((section) => ({
+    id: section.id,
+    label: section.label,
+    icon: section.icon,
+    content: (
+      <div className="w-56 px-1 py-0.5">
+        <p className="text-sm font-semibold text-foreground">{section.label}</p>
+        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+          {section.preview}
+        </p>
+      </div>
+    ),
+  }))
+}
+
 export function NavDock() {
   const { scrollTo } = useSmoothScroll()
-  const [active, setActive] = useState<string | null>(null)
+  const [activeMain, setActiveMain] = useState<string | null>(null)
+  const [activeBlog, setActiveBlog] = useState<string | null>(null)
   const closeTimerRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -65,41 +99,43 @@ export function NavDock() {
         window.clearTimeout(closeTimerRef.current)
         closeTimerRef.current = null
       }
-      setActive(id)
+      setActiveMain(id)
       if (!id) return
       scrollTo(`#${id}`, { duration: 1.1 })
-      closeTimerRef.current = window.setTimeout(() => setActive(null), 900)
+      closeTimerRef.current = window.setTimeout(() => setActiveMain(null), 2200)
     },
-    [scrollTo],
+    [scrollTo]
   )
 
-  const items: ExpandableTabsItem[] = NAV_SECTIONS.map((section) => ({
-    id: section.id,
-    label: section.label,
-    icon: section.icon,
-    content: (
-      <div className="w-56 px-1 py-0.5">
-        <p className="text-sm font-semibold text-foreground">
-          {section.label}
-        </p>
-        <p className="mt-1 text-xs leading-5 text-muted-foreground">
-          {section.preview}
-        </p>
-      </div>
-    ),
-  }))
+  const handleBlogValueChange = useCallback((id: string | null) => {
+    setActiveBlog(id)
+    if (!id) return
+    window.setTimeout(() => setActiveBlog(null), 220)
+    navigateTo("/blog")
+  }, [])
+
+  const mainItems = createItems(MAIN_NAV_SECTIONS)
+  const blogItems = createItems(BLOG_NAV_SECTIONS)
 
   return (
     <nav
       aria-label="Navegação principal"
       className="fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-4"
     >
-      <ExpandableTabs
-        items={items}
-        value={active}
-        onValueChange={handleValueChange}
-        className="shadow-lg shadow-black/10"
-      />
+      <div className="flex items-center gap-2">
+        <ExpandableTabs
+          items={mainItems}
+          value={activeMain}
+          onValueChange={handleValueChange}
+          className="shadow-lg shadow-black/10"
+        />
+        <ExpandableTabs
+          items={blogItems}
+          value={activeBlog}
+          onValueChange={handleBlogValueChange}
+          className="shadow-lg shadow-black/10"
+        />
+      </div>
     </nav>
   )
 }
