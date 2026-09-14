@@ -1,7 +1,6 @@
-import { ArrowDown, Mail } from "lucide-react"
+import { ArrowDown } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
-import { MagneticButton } from "@/components/motion/button/magnetic"
-import { ChromaticTextReveal } from "@/components/motion/chromatic-text-reveal"
+import mePicture from "@/assets/me-picture.png"
 import { ShaderBackground } from "@/components/motion/shader-background"
 import { useSmoothScroll } from "@/components/motion/smooth-scroll"
 
@@ -30,19 +29,19 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="dark relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-background"
+      className="dark relative flex min-h-svh flex-col items-center justify-center overflow-hidden border-b border-border bg-background"
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-br from-[#bbfbff] via-[#8dd8ff] to-[#5409da]"
+        className="absolute inset-0 bg-gradient-to-br from-[#050816] via-[#111827] to-[#1e1b4b]"
       />
       {heroInView ? (
         <ShaderBackground
           variant="mesh-gradient"
-          colors={["#bbfbff", "#8dd8ff", "#4e71ff", "#5409da"]}
-          distortion={0.6}
-          swirl={0.5}
-          speed={0.3}
+          colors={["#030712", "#0f172a", "#312e81", "#111827"]}
+          distortion={0.45}
+          swirl={0.35}
+          speed={0.25}
           // Blurred, distortion-heavy gradient — full 2-3x device pixel
           // density is wasted work here. Capping it is the single biggest
           // lever on the shader's per-frame cost (measured ~2.5s of main
@@ -52,61 +51,38 @@ export function Hero() {
           className="absolute inset-0"
         />
       ) : null}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/75" />
 
-      <div className="relative z-10 flex w-full max-w-4xl flex-col items-center gap-8 px-6 text-center">
-        <div className="flex flex-col items-center gap-3">
+      <div className="relative z-10 flex min-h-svh w-full flex-col justify-center overflow-hidden px-0">
+        <div className="relative flex flex-1 items-end justify-center">
+          <h1
+            aria-label="Victor Hugo"
+            className="absolute left-1/2 top-[10%] w-full -translate-x-1/2 text-center font-heading text-[clamp(4.75rem,25vw,7rem)] font-black uppercase leading-[0.78] text-foreground/95 sm:top-[28%] sm:w-[118vw] sm:whitespace-nowrap sm:text-[clamp(5.5rem,15.5vw,17rem)] sm:leading-none"
+          >
+            <span className="block sm:hidden">Victor</span>
+            <span className="block sm:hidden">Hugo</span>
+            <span className="hidden sm:block">Victor Hugo</span>
+          </h1>
+
           <img
-            src="https://avatars.githubusercontent.com/u/116356507?v=4"
-            alt="Foto de perfil de Victor Hugo"
-            width={56}
-            height={56}
-            loading="lazy"
-            className="size-14 rounded-full border border-foreground/20 object-cover"
+            src={mePicture}
+            alt=""
+            aria-hidden="true"
+            className="relative z-10 h-[88svh] max-w-none -translate-x-[11vw] object-contain object-bottom drop-shadow-2xl sm:h-auto sm:max-h-[78svh] sm:max-w-[112vw] sm:translate-x-0 lg:max-h-[86svh]"
           />
-          <span className="text-sm font-medium text-foreground/80">
-            Victor Hugo
-          </span>
-        </div>
-
-        <div className="flex w-full justify-center [container-type:inline-size]">
-          <ChromaticTextReveal
-            prefix="Eu construo"
-            words={[
-              "produtos digitais.",
-              "interfaces performáticas.",
-              "experiências sob medida.",
-            ]}
-            startOnView={false}
-            className="shrink-0 flex-col items-center gap-1 font-bold tracking-[-0.04em] text-foreground [font-size:clamp(1rem,6cqw,3rem)]"
-          />
-        </div>
-
-        <div className="flex flex-col items-center gap-3 sm:flex-row">
-          <MagneticButton
-            size="lg"
-            onClick={() => scrollTo("#projetos", { duration: 1.1 })}
-          >
-            Ver projetos
-          </MagneticButton>
-          <MagneticButton
-            size="lg"
-            variant="outline"
-            onClick={() => {
-              window.location.href = "mailto:vhlima1008@gmail.com"
-            }}
-          >
-            <Mail className="size-4" />
-            Falar comigo
-          </MagneticButton>
         </div>
       </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-b from-transparent via-background/60 to-background sm:hidden"
+      />
 
       <button
         type="button"
         aria-label="Rolar para a próxima seção"
         onClick={() => scrollTo("#sobre", { duration: 1.1 })}
-        className="absolute bottom-8 z-10 text-foreground/60 transition-colors hover:text-foreground"
+        className="absolute bottom-6 left-1/2 z-30 flex size-11 -translate-x-1/2 items-center justify-center rounded-full bg-background/35 text-foreground/80 backdrop-blur-md transition-colors hover:text-foreground sm:hidden"
       >
         <ArrowDown className="size-5 animate-bounce" aria-hidden="true" />
       </button>

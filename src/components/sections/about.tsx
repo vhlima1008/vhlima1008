@@ -12,6 +12,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si"
+import meProfilePicture from "@/assets/me-profile-picture.png"
 import { GithubMark } from "@/components/icons/github-mark"
 import { ButtonLink } from "@/components/motion/button/base"
 import { MagneticButton } from "@/components/motion/button/magnetic"
@@ -60,7 +61,7 @@ export function About() {
         </p>
         <div className="mt-4 flex items-center gap-4 sm:gap-5">
           <img
-            src="https://avatars.githubusercontent.com/u/116356507?v=4"
+            src={meProfilePicture}
             alt="Foto de perfil de Victor Hugo"
             width={80}
             height={80}
