@@ -16,6 +16,7 @@
     "@fontsource-variable/nunito-sans": "^5.3.0",
     "@fontsource-variable/roboto": "^5.3.0",
     "@paper-design/shaders-react": "^0.0.80",
+    "@tabler/icons-react": "^3.46.0",
     "@tailwindcss/vite": "^4",
     "@tanstack/react-virtual": "^3.14.10",
     "@vercel/analytics": "^2.0.1",
