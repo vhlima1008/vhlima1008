@@ -1,5 +1,6 @@
 import { Download } from "lucide-react"
 import type { IconType } from "react-icons"
+import { FaLinkedin } from "react-icons/fa6"
 import {
   SiDocker,
   SiFigma,
@@ -129,6 +130,19 @@ export function About() {
           >
             <GithubMark className="size-4" />
             Ver perfil no GitHub
+          </MagneticButton>
+          <MagneticButton
+            variant="outline"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/vhlima1008",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+          >
+            <FaLinkedin className="size-4" />
+            Ver perfil no LinkedIn
           </MagneticButton>
           <Magnetic strength={0.25}>
             <ButtonLink
