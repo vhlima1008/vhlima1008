@@ -302,6 +302,8 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Projects() {
+  const [showAllProjects, setShowAllProjects] = useState(false)
+
   return (
     <section id="projetos" className="relative px-6 py-24 sm:px-8 md:py-32 lg:px-12">
       <div className="mx-auto max-w-3xl">
@@ -336,14 +338,38 @@ export function Projects() {
           aria-label="Lista de projetos"
           className="mt-10 columns-1 gap-5 sm:columns-2"
         >
-          {PROJECTS.map((project) => (
-            <div key={project.slug} className="mb-5 break-inside-avoid">
+          {PROJECTS.map((project, index) => (
+            <div
+              key={project.slug}
+              className={cn(
+                "mb-5 break-inside-avoid",
+                !showAllProjects && index >= 3 && "hidden sm:block",
+              )}
+            >
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
 
-        <p className="mt-4 text-center text-xs text-muted-foreground">
+        {!showAllProjects && PROJECTS.length > 3 ? (
+          <div className="mt-6 flex justify-center sm:hidden">
+            <MagneticButton
+              variant="outline"
+              aria-controls="projetos"
+              aria-expanded={showAllProjects}
+              onClick={() => setShowAllProjects(true)}
+            >
+              Mostrar mais
+            </MagneticButton>
+          </div>
+        ) : null}
+
+        <p
+          className={cn(
+            "mt-4 text-center text-xs text-muted-foreground",
+            !showAllProjects && "hidden sm:block",
+          )}
+        >
           Isso é tudo por aqui — mais em{" "}
           <a
             href="https://github.com/vhlima1008"

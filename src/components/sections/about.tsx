@@ -1,4 +1,5 @@
 import { Download } from "lucide-react"
+import { useState } from "react"
 import type { IconType } from "react-icons"
 import { FaLinkedin } from "react-icons/fa6"
 import {
@@ -54,6 +55,8 @@ function SkillBall({
 }
 
 export function About() {
+  const [isTextExpanded, setIsTextExpanded] = useState(false)
+
   return (
     <section id="sobre" className="relative px-6 py-24 sm:px-8 md:py-32 lg:px-12">
       <div className="mx-auto max-w-3xl">
@@ -84,7 +87,14 @@ export function About() {
             text={"Apaixonado por criar produtos inovadores de ponta a ponta, minha especialidade é entregar soluções robustas e performáticas."}          
           />
           
-          {
+          <div
+            id="about-extra-text"
+            className={
+              isTextExpanded
+                ? "relative"
+                : "relative max-h-14 overflow-hidden sm:max-h-none sm:overflow-visible"
+            }
+          >
             <TextReveal
               delay={2}
               stagger={0.012}
@@ -96,7 +106,25 @@ export function About() {
                 `Profissionalmente, atuo desde março de 2026 como Estagiário de Desenvolvimento na Leste Telecom, onde desenvolvo e mantenho aplicações corporativas em Java Spring Boot e React TypeScript, utilizadas diariamente por cerca de 150 colaboradores. Anteriormente, atuei como Desenvolvedor Júnior na Ventrium Aceleradora de Crescimento (setembro de 2025 a fevereiro de 2026), onde implementei interfaces em React e TypeScript aplicando boas práticas de código reutilizável.`,
               ]}
             />
-          }
+            {!isTextExpanded ? (
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-background sm:hidden"
+              />
+            ) : null}
+          </div>
+          {!isTextExpanded ? (
+            <MagneticButton
+              variant="ghost"
+              size="sm"
+              className="sm:hidden"
+              aria-controls="about-extra-text"
+              aria-expanded={isTextExpanded}
+              onClick={() => setIsTextExpanded(true)}
+            >
+              Leia mais
+            </MagneticButton>
+          ) : null}
         </div>
 
         <div className="relative mt-8">
