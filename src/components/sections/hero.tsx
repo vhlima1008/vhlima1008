@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import vhLogo from "@/assets/VH.svg"
 import mePicture from "@/assets/me-picture.png"
 import { ShaderBackground } from "@/components/motion/shader-background"
 import { useSmoothScroll } from "@/components/motion/smooth-scroll"
@@ -29,16 +30,17 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
+      onContextMenu={(event) => event.preventDefault()}
       className="dark relative flex min-h-svh flex-col items-center justify-center overflow-hidden border-b border-border bg-background"
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-br from-[#050816] via-[#111827] to-[#1e1b4b]"
+        className="absolute inset-0 bg-gradient-to-br from-[#bbfbff] via-[#8dd8ff] via-55% to-[#5409da]"
       />
       {heroInView ? (
         <ShaderBackground
           variant="mesh-gradient"
-          colors={["#030712", "#0f172a", "#312e81", "#111827"]}
+          colors={["#bbfbff", "#8dd8ff", "#4e71ff", "#5409da"]}
           distortion={0.45}
           swirl={0.35}
           speed={0.25}
@@ -51,23 +53,25 @@ export function Hero() {
           className="absolute inset-0"
         />
       ) : null}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#5409da]/25 via-[#4e71ff]/10 to-[#0b2447]/70" />
 
       <div className="relative z-10 flex min-h-svh w-full flex-col justify-center overflow-hidden px-0">
         <div className="relative flex flex-1 items-end justify-center">
-          <h1
-            aria-label="Victor Hugo"
-            className="absolute left-1/2 top-[10%] w-full -translate-x-1/2 text-center font-heading text-[clamp(4.75rem,25vw,7rem)] font-black uppercase leading-[0.78] text-foreground/95 sm:top-[28%] sm:w-[118vw] sm:whitespace-nowrap sm:text-[clamp(5.5rem,15.5vw,17rem)] sm:leading-none"
-          >
-            <span className="block sm:hidden">Victor</span>
-            <span className="block sm:hidden">Hugo</span>
-            <span className="hidden sm:block">Victor Hugo</span>
-          </h1>
+          <h1 className="sr-only">Victor Hugo</h1>
+
+          <img
+            src={vhLogo}
+            alt=""
+            aria-hidden="true"
+            draggable={false}
+            className="pointer-events-none absolute left-1/2 top-[32%] z-0 w-[min(132vw,44rem)] -translate-x-1/2 -translate-y-1/2 select-none object-contain opacity-95 mix-blend-screen brightness-125 drop-shadow-[0_0_2.5rem_rgba(165,215,232,0.34)] sm:top-[42%] sm:w-[min(112vw,78rem)] lg:top-[45%] lg:w-[min(86vw,88rem)]"
+          />
 
           <img
             src={mePicture}
             alt=""
             aria-hidden="true"
+            draggable={false}
             className="relative z-10 h-[88svh] max-w-none -translate-x-[11vw] object-contain object-bottom drop-shadow-2xl sm:h-auto sm:max-h-[78svh] sm:max-w-[112vw] sm:translate-x-0 lg:max-h-[86svh]"
           />
         </div>
