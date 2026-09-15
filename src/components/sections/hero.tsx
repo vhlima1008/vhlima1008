@@ -53,7 +53,14 @@ export function Hero() {
           className="absolute inset-0"
         />
       ) : null}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#5409da]/25 via-[#4e71ff]/10 to-[#0b2447]/70" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#06142a]/70 via-[#06142a]/20 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#5409da]/25 via-[#4e71ff]/10 to-[#0b2447]/70"
+      />
 
       <div className="relative z-10 flex min-h-svh w-full flex-col justify-center overflow-hidden px-0">
         <div className="relative flex flex-1 items-end justify-center">
@@ -64,7 +71,7 @@ export function Hero() {
             alt=""
             aria-hidden="true"
             draggable={false}
-            className="pointer-events-none absolute left-1/2 top-[32%] z-0 w-[min(132vw,44rem)] -translate-x-1/2 -translate-y-1/2 select-none object-contain opacity-95 mix-blend-screen brightness-125 drop-shadow-[0_0_2.5rem_rgba(165,215,232,0.34)] sm:top-[42%] sm:w-[min(112vw,78rem)] lg:top-[45%] lg:w-[min(86vw,88rem)]"
+            className="pointer-events-none absolute bottom-24 left-1/2 z-20 w-[min(88vw,22rem)] -translate-x-1/2 select-none object-contain opacity-95 mix-blend-screen brightness-125 drop-shadow-[0_0_2.5rem_rgba(165,215,232,0.34)] sm:bottom-auto sm:top-[42%] sm:z-0 sm:w-[min(112vw,78rem)] sm:-translate-y-1/2 lg:top-[45%] lg:w-[min(86vw,88rem)]"
           />
 
           <img
@@ -72,14 +79,18 @@ export function Hero() {
             alt=""
             aria-hidden="true"
             draggable={false}
-            className="relative z-10 h-[88svh] max-w-none -translate-x-[11vw] object-contain object-bottom drop-shadow-2xl sm:h-auto sm:max-h-[78svh] sm:max-w-[112vw] sm:translate-x-0 lg:max-h-[86svh]"
+            className="relative z-10 h-[88svh] max-w-none translate-x-0 object-contain object-bottom drop-shadow-2xl sm:h-auto sm:max-h-[78svh] sm:max-w-[112vw] lg:max-h-[86svh]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-[15] h-[34svh] bg-gradient-to-t from-[#020817]/80 via-[#020817]/38 to-transparent sm:hidden"
           />
         </div>
       </div>
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-b from-transparent via-background/60 to-background sm:hidden"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-32 bg-gradient-to-b from-transparent via-background/60 to-background sm:hidden"
       />
 
       <button
