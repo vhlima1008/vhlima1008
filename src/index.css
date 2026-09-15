@@ -138,6 +138,79 @@
     }
 }
 
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes page-fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes media-reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html[data-page-transition="route"]::view-transition-old(root) {
+    animation: 140ms ease-out both page-fade-out;
+}
+
+html[data-page-transition="route"]::view-transition-new(root) {
+    animation: 240ms ease-out 80ms both page-fade-in;
+}
+
+::view-transition {
+    pointer-events: none;
+}
+
+::view-transition-group(persistent-nav) {
+    animation: none;
+    z-index: 100;
+}
+
+::view-transition-old(persistent-nav),
+::view-transition-new(persistent-nav) {
+    animation: none;
+}
+
+.media-reveal {
+    animation: media-reveal 520ms ease-out both;
+    will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(*),
+    ::view-transition-new(*),
+    ::view-transition-group(*) {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+    }
+
+    .media-reveal {
+        animation: none;
+        opacity: 1;
+        will-change: auto;
+    }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

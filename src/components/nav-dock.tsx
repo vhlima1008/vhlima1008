@@ -6,7 +6,9 @@ import {
   Route,
   UserRound,
 } from "lucide-react"
+import { useSmoothScroll } from "@/components/motion/smooth-scroll"
 import { FloatingDock } from "@/components/ui/floating-dock"
+import { navigateTo } from "@/lib/navigation"
 
 const iconClassName = "h-full w-full text-neutral-500 dark:text-neutral-300"
 
@@ -44,15 +46,24 @@ const navItems = [
 ]
 
 export function NavDock() {
+  const { scrollTo } = useSmoothScroll()
+
   return (
     <nav
       aria-label="Navegação principal"
-      className="fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex justify-end px-4 md:justify-center"
+      className="fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex justify-end px-4 [view-transition-name:persistent-nav] md:justify-center"
     >
       <FloatingDock
         items={navItems}
         desktopClassName="shadow-lg shadow-black/10"
         mobileClassName="shadow-lg shadow-black/10"
+        onNavigate={(href) => {
+          if (href.startsWith("#")) {
+            scrollTo(href, { duration: 1.05 })
+            return
+          }
+          navigateTo(href)
+        }}
       />
     </nav>
   )

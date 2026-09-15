@@ -115,15 +115,14 @@ const markdownComponents: Components = {
 }
 
 function BlogCard({ post }: { post: BlogPost }) {
+  const { scrollTo } = useSmoothScroll()
+
   return (
     <a
       href={`#${post.slug}`}
       onClick={(event) => {
         event.preventDefault()
-        document.getElementById(post.slug)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
+        scrollTo(`#${post.slug}`, { duration: 1.05 })
       }}
       className="block h-full min-w-0 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-foreground/20"
     >
@@ -167,7 +166,7 @@ function BlogReadingDock() {
   return (
     <nav
       aria-label="Navegação de leitura"
-      className="fixed right-4 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50"
+      className="fixed right-4 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 [view-transition-name:persistent-nav]"
     >
       <ExpandableTabs
         items={topDockItems}
