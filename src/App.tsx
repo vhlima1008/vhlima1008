@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { useEffect, useState, type ReactNode } from "react"
-import { SmoothScroll } from "@/components/motion/smooth-scroll"
+import { flushSync } from "react-dom"
+import { SmoothScroll, useSmoothScroll } from "@/components/motion/smooth-scroll"
 import { NavDock } from "@/components/nav-dock"
 import { Blog } from "@/components/pages/blog"
 import { About } from "@/components/sections/about"
@@ -49,17 +50,27 @@ function PageTransition({
   )
 }
 
+function RouteScrollReset({ pathname }: { pathname: string }) {
+  const { scrollTo } = useSmoothScroll()
+
+  useEffect(() => {
+    scrollTo(0, { immediate: true })
+  }, [pathname, scrollTo])
+
+  return null
+}
+
 export function App() {
   const [pathname, setPathname] = useState(getCurrentPath)
 
-  useEffect(() => onRouteChange(() => setPathname(getCurrentPath())), [])
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "auto" })
-  }, [pathname])
+  useEffect(
+    () => onRouteChange(() => flushSync(() => setPathname(getCurrentPath()))),
+    [],
+  )
 
   return (
     <SmoothScroll>
+      <RouteScrollReset pathname={pathname} />
       <PageTransition routeKey={pathname === "/blog" ? "blog" : "home"}>
         {pathname === "/blog" ? <Blog /> : <HomePage />}
       </PageTransition>
