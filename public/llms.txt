@@ -6,6 +6,7 @@
 
 ## Links:
 
-- [Portfólio](https://www.vhlima.com.br): Mais sobre Victor Hugo
+- [Portfólio](https://vhlima.com.br): Mais sobre Victor Hugo
+- [Blog](https://vhlima.com.br/blog): Textos técnicos de Victor Hugo
 - [LinkedIn](https://www.linkedin.com/in/vhlima1008): Currículo de Victor Hugo
 - [GitHub](https://github.com/vhlima1008): Projetos de Victor Hugo

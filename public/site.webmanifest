@@ -1,13 +1,15 @@
 {
-  "name": "victor hugo",
+  "name": "Victor Hugo Lima Monteiro",
   "short_name": "vhlima",
-  "description": "graduando em engenharia da computação, é desenvolvedor full-stack java spring boot e react typescript.",
+  "description": "Portfolio de Victor Hugo Lima Monteiro, desenvolvedor full-stack com Java Spring Boot e React TypeScript.",
   "icons": [
     { "src": "/favicon.png", "sizes": "1200x1200", "type": "image/png" }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#020817",
   "background_color": "#161b1d",
   "display": "standalone",
   "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "lang": "pt-BR"
 }
