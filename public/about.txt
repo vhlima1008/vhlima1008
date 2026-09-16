@@ -1,6 +1,8 @@
-This favicon was generated using the following font:
+Victor Hugo Lima Monteiro
+Desenvolvedor Full-stack Java Spring Boot e React TypeScript
 
-- Font Title: freehand drawing
-- Font Author: Victor Hugo Lima Monteiro
-- Font Source: undefined
-- Font License: undefined
+Portfolio: https://vhlima.com.br
+GitHub: https://github.com/vhlima1008
+LinkedIn: https://www.linkedin.com/in/vhlima1008
+
+Este site apresenta projetos, experiencia profissional, textos tecnicos e formas de contato.

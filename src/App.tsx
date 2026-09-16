@@ -13,6 +13,56 @@ import { getCurrentPath, onRouteChange } from "@/lib/navigation"
 import { inject } from "@vercel/analytics"
 inject()
 
+const SITE_URL = "https://vhlima.com.br"
+
+const routeMetadata: Record<
+  "home" | "blog",
+  { title: string; description: string; path: string }
+> = {
+  home: {
+    title: "Victor Hugo Lima Monteiro | Desenvolvedor Full-stack",
+    description:
+      "Victor Hugo — desenvolvedor full-stack (Java Spring Boot & React TypeScript). Projetos, experiência profissional e contato.",
+    path: "/",
+  },
+  blog: {
+    title: "Blog | Victor Hugo Lima Monteiro",
+    description:
+      "Textos técnicos de Victor Hugo Lima Monteiro sobre desenvolvimento, arquitetura, Java Spring Boot, React TypeScript e boas práticas web.",
+    path: "/blog",
+  },
+}
+
+function setMetaAttribute(
+  selector: string,
+  attribute: "content" | "href",
+  value: string,
+) {
+  document.querySelector(selector)?.setAttribute(attribute, value)
+}
+
+function updateDocumentMetadata(pathname: string) {
+  const metadata = pathname === "/blog" ? routeMetadata.blog : routeMetadata.home
+  const url = `${SITE_URL}${metadata.path === "/" ? "/" : metadata.path}`
+
+  document.title = metadata.title
+  setMetaAttribute('meta[name="description"]', "content", metadata.description)
+  setMetaAttribute('link[rel="canonical"]', "href", url)
+  setMetaAttribute('meta[property="og:url"]', "content", url)
+  setMetaAttribute('meta[property="og:title"]', "content", metadata.title)
+  setMetaAttribute(
+    'meta[property="og:description"]',
+    "content",
+    metadata.description,
+  )
+  setMetaAttribute('meta[name="twitter:title"]', "content", metadata.title)
+  setMetaAttribute(
+    'meta[name="twitter:description"]',
+    "content",
+    metadata.description,
+  )
+}
+
 function HomePage() {
   return (
     <>
@@ -67,6 +117,10 @@ export function App() {
     () => onRouteChange(() => flushSync(() => setPathname(getCurrentPath()))),
     [],
   )
+
+  useEffect(() => {
+    updateDocumentMetadata(pathname)
+  }, [pathname])
 
   return (
     <SmoothScroll>

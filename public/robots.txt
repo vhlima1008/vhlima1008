@@ -1,5 +1,5 @@
-# Victor Hugo — Desenvolvedor Full-Stack Java Spring Boot e React TypeScript
-# https://github.com/vhlima1008
+# Victor Hugo Lima Monteiro — Desenvolvedor Full-stack Java Spring Boot e React TypeScript
+# https://vhlima.com.br
 
 User-agent: *
 Allow: /
@@ -29,4 +29,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.vhlima1008.com.br/sitemap.xml
+Sitemap: https://vhlima.com.br/sitemap.xml
