@@ -174,8 +174,8 @@ export function About() {
           </MagneticButton>
           <Magnetic strength={0.25}>
             <ButtonLink
-              href="/curriculo-victor-hugo.pdf"
-              download="Victor-Hugo-Lima-Monteiro-Curriculo.pdf"
+              href="/public/Victor Hugo Lima Monteiro - Curriculo Vitae (CV).pdf"
+              download="Victor Hugo Lima Monteiro - Curriculo Vitae (CV).pdf"
               variant="outline"
             >
               <Download className="size-4" />
